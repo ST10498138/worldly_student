@@ -34,7 +34,7 @@ The website provides tools, resources, and community support to guide students i
 ## Sitemap
 Here is the sitemap of the Worldly Student website:
 
-![Sitemap](./_images/_images/sitemap_ws.png)
+![Sitemap](./_images/sitemap_ws.png)
 
 
 ---
