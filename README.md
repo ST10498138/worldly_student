@@ -56,15 +56,21 @@ Here is the sitemap of the Worldly Student website:
 
 ---
 
-##  References
-- [Unsplash](https://unsplash.com) (royalty-free images)  
-- [W3Schools](https://www.w3schools.com) (HTML/CSS resources)  
-- [MDN Web Docs](https://developer.mozilla.org)  
+## Références
+
+- **Canva.** 2025. *ChatGPT*. [online] Available at: <https://www.canva.com/> [Accessed 27 August 2025].  
+- **Google.** 2025. *Google Search*. [online] Available at: <https://www.google.com/> [Accessed 27 August 2025]. 
+- **MDN Web Docs**(https://developer.mozilla.org) 
+all my images come from this site  
+- **Pexels.** 2025. *Pexels – Free Stock Photos*. [online] Available at: <https://www.pexels.com/> [Accessed 27 August 2025].  
+- **Wikipedia.** 2025. *Wikipedia*. [online] Available at: <https://www.wikipedia.org/> [Accessed 27 August 2025].  
+
+
 
 ---
 
-## 🔗 GitHub Repository
-👉 [Worldly Student Repository](https://github.com/YourUsername/worldly-student)  
+##  GitHub Repository
+ [Worldly Student Repository](https://github.com/ST10498138/worldly_student.git)  
 
 
  
