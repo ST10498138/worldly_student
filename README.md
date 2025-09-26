@@ -60,9 +60,10 @@ Here is the sitemap of the Worldly Student website:
 
 - **Canva.** 2025. *ChatGPT*. [online] Available at: <https://www.canva.com/> [Accessed 27 August 2025].  
 - **Google.** 2025. *Google Search*. [online] Available at: <https://www.google.com/> [Accessed 27 August 2025]. 
+
+- **GEMINI** Google (2025). Gemini. [online] gemini.google.com. Available at: https://gemini.google.com/app.
 - **MDN Web Docs**(https://developer.mozilla.org) 
-all my images come from this site  
-- **Pexels.** 2025. *Pexels – Free Stock Photos*. [online] Available at: <https://www.pexels.com/> [Accessed 27 August 2025].  
+- **Pexels.** 2025. *Pexels – Free Stock Photos*. [online] Available at: <https://www.pexels.com/> [Accessed 27 August 2025]. all my images   come  from this site 
 - **Wikipedia.** 2025. *Wikipedia*. [online] Available at: <https://www.wikipedia.org/> [Accessed 27 August 2025].  
 
 
@@ -70,7 +71,7 @@ all my images come from this site
 ---
 
 ##  GitHub Repository
- [Worldly Student Repository](https://github.com/ST10498138/worldly_student.git)  
+ [Worldly Student Repository](https://github.com/ST10498138/worldly_student)  
 
 
  

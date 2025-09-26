@@ -4,14 +4,16 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Worldly Student - Welcome</title>
+  <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-
+<!-- HEADER -->
   <header>
-    <div>
-      <img src="_images/Logo_of_WorldlyStudent.png" alt="Logo" width="60">
+    <div class="logo-contenaire"> <!-- contenaire pour rendre le logo rond -->
+      <img src="_images/Logo_of_WorldlyStudent.png" alt="Logo">
       <span>Worldly Student</span>
     </div>
+    <!-- Navigation -->
     <nav>
        <ul>
           <li><b>Home page</b></li>
@@ -26,46 +28,75 @@
   </header>
 
   <main>
-    <section>
-      <h1>Welcome to Worldly Student</h1>
-      <p>Your guide to a successful integration abroad.</p>
-      <a href="guide.html">Discover Guides</a>
-      <a href="community.html">Join the Community</a>
-      <div>
-        <img src="_Images/pexels-expressivestanley-1454360.jpg" alt="Students abroad" width="400">
+    <!--hero section-->
+    <section class="hero">
+      <div class="hero-text">
+        <h1>Welcome to Worldly Student</h1>
+        <p>Your guide to a successful integration abroad.</p>
+        <div class="hero-buttons">
+          <a href="guide.html" class="btn primary">Start now</a>
+          <a href="community.html" class="btn secondary">Join us</a>
+        </div>
+      </div>
+      <div class="hero-image">
+        <img src="_images/Logo_of_WorldlyStudent.png" alt="Students abroad">
       </div>
     </section>
 
-    <section>
+    <!--mission section-->
+    <section class="info-section">
       <h2>Our Mission</h2>
       <p>Practical tips and step-by-step guides for students moving abroad.</p>
-      <h3>Culture & Language</h3>
-      <p>Helping students adapt to new languages, traditions, and customs.</p>
-      <h3>University Life</h3>
-      <p>Support to navigate academic systems and succeed in studies.</p>
+      <div class="cards">
+        <div class="card">
+          <h3>Culture & Language</h3>
+          <p>Helping students adapt to new languages, traditions, and customs.</p>
+        </div>
+        <div class="card">
+          <h3>University Life</h3>
+          <p>Support to navigate academic systems and succeed in studies.</p>
+        </div>
+        <div class="card">
+          <h3>Environmental Development Life</h3>
+          <p>Our wish is not only that you adapt to student life but also develop and find your bearings in this new environment.</p>
+        </div>
+      </div>
     </section>
 
-    <section>
+    <!--vision section-->
+    <section class="vision-section">
       <h2>Our Vision</h2>
       <blockquote>
-        <p>“We envision Worldly Student as the go-to global resource for foreign student integration, offering a comprehensive and reliable guide that caters to many countries and languages.”</p>
+        “We envision Worldly Student as the go-to global resource for foreign student integration, offering a comprehensive and reliable guide that caters to many countries and languages.”
       </blockquote>
     </section>
 
-    <section>
-      <h2>Some Stats</h2>
-      <p> 50+ Countries Covered</p>
-      <p> 1000+ Students Supported</p>
-      <p> 10+ Practical Guides</p>
+    <!--stats section-->
+    <section class="stats">
+      <div class="stat">
+        <span>50+</span>
+        <p>Countries Covered</p>
+      </div>
+      <div class="stat">
+        <span>1000+</span>
+        <p>Students Supported</p>
+      </div>
+      <div class="stat">
+        <span>10+</span>
+        <p>Practical Guides</p>
+      </div>
     </section>
 
-    <section>
+    <!--go section-->
+    <section class="cta">
       <h2>Ready to start your international journey?</h2>
-      <a href="guide.html">Explore Resources</a>
-      <a href="community.html">Join Us Now</a>
+      <a href="guide.html" class="btn primary">Explore Resources</a>
+      <a href="community.html" class="btn secondary">Join Us Now</a>
     </section>
+    
   </main>
 
+  <!--the footer-->
   <footer>
         <p>&copy; 2025 Worldly Student. All Rights Reserved.</p>
   </footer>
