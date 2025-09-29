@@ -67,7 +67,7 @@ Here is the sitemap of the Worldly Student website:
 ---
 
 ##  Changelog Update
-This section lists the updates made after the initial submission, based on feedback and improvements.  
+
 
 - Added a **CSS stylesheet** for consistent styling across all pages.  
 - Inserted **comments in the code** to explain the structure and functionality of each section.  
@@ -77,7 +77,7 @@ This section lists the updates made after the initial submission, based on feedb
 - Replaced the **Timeline & Milestones** with the requested **tabular format** for clarity.  
 - Updated the **References** section into **Harvard Anglia style**, removing bullet points.  
 - Confirmed that **references were correctly updated in Harvard Anglia style**.  
-- Added **Google (as requested)** in the references section.  
+- Added **Google Form (as requested)** in the references section.  
 
 ---
 
@@ -96,7 +96,8 @@ This section lists the updates made after the initial submission, based on feedb
 ![Ressources & Guides](_images/guide_Screenshot.png)
 
 #### Tools  
-![Tools](./screenshots/gallery.png)
+![Tools](_images/Tools_Screenshot.png)
+![Tools](_images/Tools_Screenshot2.png)
 
 #### community  
 ![community page](_images/community_Screenshot1.png)
