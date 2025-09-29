@@ -1,90 +1,86 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Worldly Student - Contact</title>
-    <link rel="stylesheet" href="styles.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Worldly Student - Contact</title>
+  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"> <!-- Importing the Font Awesome icon library -->
 </head>
 <body>
+  <!-- HEADER -->
+  <header>
+    <div class="logo-contenaire">
+      <img src="_images/Logo_of_WorldlyStudent.png" alt="Logo"><!-- Logo -->
+      <span>Worldly Student</span>
+    </div>
+    <!-- Navigation -->
+    <nav>
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="about.html">About us</a></li>
+        <li><a href="guide.html">Resources & Guides</a></li>
+        <li><a href="tools.html">Tools</a></li>
+        <li><a href="community.html">Community</a></li>
+        <li><a href="gallery.html">Gallery</a></li>
+        <li><b>Contact us</b></li><!-- Active page displayed in bold -->
+      </ul>
+    </nav>
+  </header>
 
-    <header>
-        <div class="logo">
-            <img src="_images/Logo_of_WorldlyStudent.png" alt="Logo" width="50" height="50">
+  <main><!-- MAIN CONTENT -->
+    <h1 class="page-title">Contact Us</h1>
+    <p class="page-subtitle">We’d love to hear from you!</p>
+
+    <div class="contact-container">
+      <!-- LEFT SECTION: Google Form + Google Maps -->
+      <div class="contact-left">
+        
+        <!-- Google Form  -->
+        <div class="google-form">
+          <iframe src="https://docs.google.com/forms/d/e/1FAIpQLScJyAQpeMZyu_shsIZkSMdI4qkLYvE1jS0xqcaSA9Ts7K5OzQ/viewform?embedded=true" 
+          width="640" height="720" frameborder="0" marginheight="0" marginwidth="0">Loading…</iframe>
         </div>
-        <nav>
-        <ul>
-          <li><a href="index.html">Home page</a></li>
-          <li><a href="about.html">About us</a></li>
-          <li><a href="guide.html">Resources & Guides</a></li>
-          <li><a href="tools.html">Tools</a></li>
-          <li><a href="community.html">Community</a></li>
-          <li><a href="gallery.html">Gallery</a></li>
-          <li><b>Contact us</b></li>
-        </ul>
-        </nav>
-    </header>
 
-    <main>
-        <section id="contact">
-            <h1>Contact Us</h1>
-            <p>We’d love to hear from you! Reach us through the following details:</p>
+        <!-- Integrated Google Maps -->
+        <div class="map-container">
+          <h3>Find us</h3>
+          <iframe 
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d114656.73445406392!2d27.88409689999999!3d-26.098169449999997!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x1e959fc44e94e52b%3A0x21e34710a49d1963!2sRoodepoort!5e0!3m2!1sfr!2sza!4v1756303711692!5m2!1sfr!2sza"
+            width="100%" height="250" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+        </div>
+      </div>
 
-            
-            <div>
-                <h3> Opening Hours</h3>
-                <p>Monday - Friday: 09:00 - 18:00</p>
-                <p>Saturday: 10:00 - 14:00</p>
-                <p>Sunday: Closed</p>
-            </div>
+      <!-- RIGHT SECTION: practical information -->
+      <div class="contact-right">
+        <h3>Opening Hours</h3>
+        <p>Monday - Friday: 09:00 - 18:00</p>
+        <p>Saturday: 10:00 - 14:00</p>
+        <p>Sunday: Closed</p>
 
-            <div>
-                <h3> Address</h3>
-                <p>123 International Street,<br> johannesburg, South Africa</p>
-            </div>
+        <h3>Address</h3>
+        <p>123 International Street,<br> Johannesburg, South Africa</p>
 
-            <div>
-                <h3> Email</h3>
-                <p><a href="mailto:info@worldlystudent.com">info@worldlystudent.com</a></p>
-            </div>
+        <h3>Phone</h3>
+        <p>+27 890 436 234</p>
 
-            <div>
-                <h3>Phone</h3>
-                <p>+27 890 436 234</p>
-            </div>
+        <h3>Email</h3>
+        <p><a href="mailto:info@worldlystudent.com">info@worldlystudent.com</a></p>
 
-            
-            <div>
-                <h3>Follow Us</h3>
-                <p>
-                    <a href="#"><i class="fab fa-facebook"></i> Facebook</a> | 
-                    <a href="#"><i class="fab fa-linkedin"></i> LinkedIn</a> | 
-                    <a href="#"><i class="fab fa-instagram"></i> Instagram</a> | 
-                    <a href="#"><i class="fab fa-youtube"></i> YouTube</a>
-                </p>
-            </div>
+        <h3>Follow us</h3>
+        <div class="social-links">
+            <a href="#"><i class="fab fa-facebook"></i> Facebook</a>
+            <a href="#"><i class="fab fa-linkedin"></i> LinkedIn</a>
+            <a href="#"><i class="fab fa-instagram"></i> Instagram</a>
+            <a href="#"><i class="fab fa-youtube"></i> YouTube</a>
+        </div>
+      </div>
+    </div>
+  </main>
 
-            
-            <div>
-                <h3><i class="fa-solid fa-location-dot"></i> Find Us on Map</h3>
-                <iframe 
-                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d114656.73445406392!2d27.88409689999999!3d-26.098169449999997!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x1e959fc44e94e52b%3A0x21e34710a49d1963!2sRoodepoort!5e0!3m2!1sfr!2sza!4v1756303711692!5m2!1sfr!2sza" 
-                    width="600" 
-                    height="450" 
-                    style="border:0;" 
-                    allowfullscreen="" 
-                    loading="lazy" 
-                    referrerpolicy="no-referrer-when-downgrade">
-                </iframe>
-                 
-                
-            </div>
-        </section>
-    </main>
-
-    <footer>
-        <p>&copy; 2025 Worldly Student. All Rights Reserved.</p>
-    </footer>
-
+  <!-- FOOTER -->
+  <footer>
+    <p>&copy; 2025 Worldly Student. All Rights Reserved.</p>
+  </footer>
 </body>
 </html>

@@ -3,64 +3,67 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Worldly Student - Espace Communautaire</title>
+    <title>Worldly Student - Community Space</title>
     <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"> <!-- Importing the Font Awesome icon library -->
+
 </head>
 <body>
 
     <!-- HEADER -->
     <header>
-        <div class="logo">
-            <img src="_images/Logo_of_WorldlyStudent.png" alt="Logo" width="60">
-            <span class="site-title">Worldly Student</span>
-        </div>
+        <div class="logo-contenaire"> <!-- contenaire pour rendre le logo rond -->
+            <img src="_images/Logo_of_WorldlyStudent.png" alt="Logo">
+            <span>Worldly Student</span>
+       </div>
+       <!-- Navigation -->
         <nav>
-        <ul>
-            <li><a href="index.html">Home page</a></li>
-            <li><a href="about.html">About us</a></li>
-            <li><a href="guide.html">Resources & Guides</a></li>
-            <li><a href="tools.html">Tools</a></li>
-            <li><b>Community</b></li>
-            <li><a href="gallery.html">Gallery</a></li>
-            <li><a href="contact.html">Contact us</a></li>
-        </ul>
+            <ul>
+                <li><a href="index.html">Home page</a></li>
+                <li><a href="about.html">About us</a></li>
+                <li><a href="guide.html">Resources & Guides</a></li>
+                <li><a href="tools.html">Tools</a></li>
+                <li><b>Community</b></li><!-- Active page displayed in bold -->
+                <li><a href="gallery.html">Gallery</a></li>
+                <li><a href="contact.html">Contact us</a></li>
+            </ul>
         </nav>
     </header>
-     <!-- When the community is not empty -->
+    <!-- When the community is not empty -->
     <main>
         <h1>Community Space</h1>
         <p>A place of exchange where you can ask questions, share your experiences and interact with the community.</p>
 
        
-        <div class="hero-image">
-            <img src="_Images/pexels-hillaryfox-1595391.jpg" alt="Header image for the community" width="400">
+        <div class="hero-image"><!-- Community section home image -->
+            <img src="_images/pexels-gabby-k-5384623.jpg" alt="Header image for the community" width="700">
         </div>
 
-        
+        <!-- Search bar to find discussions -->
         <form class="search-bar" action="#" method="get">
             <input type="text" name="query" placeholder="Search for a discussion...">
             <button type="submit">Search</button>
         </form>
 
-        
+        <!-- Sort buttons to filter discussions -->
         <div class="community-filters">
             <button type="button">Recent</button>
             <button type="button">Most liked</button>
             <button type="button">Subscriber</button>
         </div>
 
-        
+        <!-- Example post(main post) -->
         <section id="main-post">
             <div class="post-header">
                 <div class="post-author-info">
-                    <div class="post-avatar"></div>
+                    <div class="post-avatar"></div> <!-- Space reserved for avatar or profile picture -->
                     <div class="author-details">
                         <h3>Moderator Name</h3>
                         <p>25 minutes ago</p>
                     </div>
                 </div>
                 <div class="post-actions">
-                    <button>Add question</button>
+                    <button>Add question</button><!-- Button to add a question -->
                 </div>
             </div>
 
@@ -87,7 +90,7 @@
             <div class="comment-container">
                 <div class="comment-item">
                     <div class="comment-author">
-                        <div class="comment-avatar"></div>
+                        <div class="comment-avatar"></div> <!-- User avatar or profile picture -->
                         <div class="author-details">
                             <h4>Username</h4>
                             <p>10 minutes ago</p>
@@ -103,40 +106,27 @@
     </main>
 
 
-      <!-- when the community is empty -->
+    <!-- when the community is empty -->
 
-    <!-- <main>
-
-        <div>
-            <img src="_Images/pexels-hillaryfox-1595391.jpg" alt="Community header image">
-        </div>
+    <!-- <main class="empty-community">
+ 
 
         <h1>Community Space</h1>
         <p>A place to ask questions, share experiences, and interact with the community.</p>
-
-        <div>
-            <input type="text" placeholder="Search for a discussion...">
-            <button>Search</button>
-        </div>
-
-        <div>
-            <button>Recent</button>
-            <button>Most Liked</button>
-            <button>Subscribed</button>
+         
+        <div class="empty-icon"> icon showing the absence of content (empty folder)
+            <i class="fas fa-folder-open"></i>
         </div>
 
         <section id="community-post">
-            <div>
-                
-                <h2>No posts have been published yet.</h2>
-                <p>The comment section is unavailable. Check back soon for new discussions and shared content!</p>
-                <a href="#">View previous posts</a>
-            </div>
+            <h2>No posts have been published yet.</h2>
+            <p>The comment section is unavailable. Check back soon for new discussions and shared content!</p>
+            <a href="#">View previous posts</a>
         </section>
+    </main> -->
 
-     </main> -->
 
-
+     <!-- FOOTER -->
     <footer>
         <p>&copy; 2025 Worldly Student. All rights reserved.</p>
     </footer>
