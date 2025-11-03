@@ -1266,3 +1266,367 @@ form button:hover {
   font-size: 0.9em;
   color: #555;
 }
+
+/* Modal & small UI for dynamic guides - */
+.modal-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,0.6);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 3000;
+  padding: 20px;
+}
+.modal {
+  width: 100%;
+  max-width: 70%;
+  background: white;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 20px 40px rgba(0,0,0,0.25);
+  transform: translateY(20px);
+  opacity: 0;
+  transition: all 0.32s cubic-bezier(.2,.9,.2,1);
+}
+.modal.show {
+  transform: translateY(0);
+  opacity: 1;
+}
+.modal-header {
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  padding:18px 22px;
+  background: linear-gradient(90deg, var(--primary-dark), var(--primary));
+  color: white;
+}
+.modal-body {
+  padding: 20px;
+  max-height: 65vh;
+  overflow: auto;
+}
+.modal-body img {
+  width: 100%;
+  max-height: 300px;
+  object-fit: cover;
+  border-radius: 8px;
+  margin-bottom: 12px;
+}
+.modal-footer {
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  padding: 14px 20px;
+  border-top: 1px solid rgba(0,0,0,0.06);
+  gap: 12px;
+}
+
+/* like button small */
+.like-btn {
+  display:inline-flex;
+  align-items:center;
+  gap:8px;
+  background: var(--primary-light);
+  color: white;
+  border: none;
+  padding: 8px 12px;
+  border-radius: 8px;
+  cursor: pointer;
+  font-weight: 700;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.12);
+}
+.like-btn.liked {
+  background: var(--accent-hover);
+  transform: scale(1.02);
+}
+
+/* suggested list in modal */
+.suggested-guides {
+  margin-top: 18px;
+}
+.suggested-guides h4 {
+  margin-bottom: 8px;
+  color: var(--primary-dark);
+}
+.suggested-list {
+  display:flex;
+  gap:12px;
+  flex-wrap:wrap;
+}
+.suggested-item {
+  background: var(--bg-vision);
+  padding:10px;
+  border-radius:10px;
+  min-width:160px;
+  cursor:pointer;
+  box-shadow: 0 6px 12px rgba(0,0,0,0.06);
+}
+.suggested-item img {
+  width:100%;
+  height:90px;
+  object-fit:cover;
+  border-radius:6px;
+  margin-bottom:8px;
+}
+.suggested-item h5 {
+  font-size:0.95em;
+  margin:0;
+  color:var(--text-dark);
+}
+
+/* injected search input */
+.injected-search {
+  display:flex;
+  gap:8px;
+  max-width:700px;
+  margin: 8px auto 20px;
+  justify-content:center;
+}
+.injected-search input {
+  flex:1;
+  padding:10px 12px;
+  border-radius:10px;
+  border:1px solid rgba(0,0,0,0.08);
+  background: white;
+}
+.injected-search button {
+  padding:10px 14px;
+  border-radius:10px;
+  background: var(--primary-dark);
+  color:white;
+  border:none;
+  cursor:pointer;
+  font-weight:700;
+}
+
+
+
+/* Animation of tools appearing  */
+.tool-item.fade-in {
+  opacity: 0;
+  transform: translateY(25px);
+  transition: opacity 0.6s ease, transform 0.6s ease;
+}
+.tool-item.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+
+.community-filters button.active {
+  background-color: #0077cc;
+  color: #fff;
+}
+
+.comment-meta {
+  margin-top: 4px;
+  font-size: 0.9em;
+  color: #555;
+  display: flex;
+  gap: 10px;
+}
+
+.like-btn {
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-size: 1em;
+  margin-left: 8px;
+  transition: transform 0.2s ease;
+}
+
+.like-btn:hover {
+  transform: scale(1.1);
+}
+
+/*COMMENT SECTION STYLING */
+#comment-section {
+  background: #f9fafc;
+  border-radius: 12px;
+  padding: 25px;
+  margin-top: 30px;
+  box-shadow: 0 3px 8px rgba(0, 0, 0, 0.08);
+}
+
+#comment-section h2 {
+  font-size: 1.4em;
+  margin-bottom: 15px;
+  color: #333;
+  border-bottom: 2px solid #0077ff;
+  display: inline-block;
+  padding-bottom: 5px;
+}
+
+.comment-container {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.comment-item {
+  background: white;
+  border-radius: 10px;
+  padding: 15px;
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.05);
+}
+
+.comment-avatar {
+  background: linear-gradient(135deg, #0077ff, #00c4ff);
+  width: 45px;
+  height: 45px;
+  border-radius: 50%;
+  flex-shrink: 0;
+  margin-right: 12px;
+}
+
+.comment-author {
+  display: flex;
+  flex-direction: column;
+}
+
+.comment-author h4 {
+  margin: 0;
+  font-weight: 600;
+  color: #222;
+}
+
+.comment-author p {
+  margin: 2px 0 8px;
+  font-size: 0.85em;
+  color: #777;
+}
+
+.comment-text {
+  font-size: 0.95em;
+  color: #333;
+  line-height: 1.4;
+}
+
+.comment-input {
+  margin-top: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.comment-input textarea {
+  width: 100%;
+  min-height: 80px;
+  padding: 10px;
+  border-radius: 8px;
+  border: 1px solid #ccc;
+  resize: vertical;
+}
+
+.comment-input button {
+  align-self: flex-end;
+  background: #0077ff;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  padding: 8px 16px;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+
+.comment-input button:hover {
+  background: #005ed1;
+}
+
+
+.map-container {
+  margin-top: 20px;
+  background: #f9fafc;
+  border-radius: 10px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+  overflow: hidden;
+}
+
+#map {
+  width: 100%;
+  height: 350px;
+}
+
+
+/* Animation pour les cartes Our Mission */
+/* --- Section Our Mission --- */
+.info-section {
+  text-align: center;
+  padding: 3rem 1rem;
+}
+
+.cards {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 2rem;
+  margin-top: 2rem;
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.6s ease, transform 0.6s ease;
+}
+
+.cards.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.card {
+  background: #baddf0;
+  border-radius: 15px;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.08);
+  padding: 1.5rem;
+  width: 280px;
+  transition: transform 0.4s ease, opacity 0.4s ease;
+  opacity: 0;
+  transform: translateY(30px);
+}
+
+.cards.visible .card {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Staggered animation */
+.cards.visible .card:nth-child(1) { transition-delay: 0.2s; }
+.cards.visible .card:nth-child(2) { transition-delay: 0.4s; }
+.cards.visible .card:nth-child(3) { transition-delay: 0.6s; }
+
+/* --- Section Stats --- */
+.stats {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 3rem;
+  margin: 4rem 0;
+  text-align: center;
+  flex-wrap: wrap;
+}
+
+.stat {
+  background: #ffffff;
+  border-radius: 12px;
+  padding: 1.5rem 2rem;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+  transition: transform 0.3s ease;
+}
+
+.stat:hover {
+  transform: translateY(-5px);
+}
+
+.stat span {
+  font-size: 2.2rem;
+  font-weight: bold;
+  display: block;
+  color: #0078b7;
+}
+
+.stat p {
+  margin-top: 0.5rem;
+  color: #444;
+}
