@@ -278,6 +278,22 @@ nav li b {
   text-align: center;
 }
 
+.info-section h2::after {
+  content: " ▼";
+  font-size: 0.9rem;
+  opacity: 0.6;
+  transition: transform 0.3s ease;
+}
+
+.info-section h2:hover {
+  color: #4ea7c0;
+  transform: scale(1.05);
+}
+
+.info-section h2.open::after {
+  transform: rotate(180deg);
+}
+
 .info-section > p {
   font-style: italic;
   color: var(--text-muted);
@@ -334,6 +350,7 @@ nav li b {
   margin: 40px 0;
   border-radius: 12px;
 }
+
 
 .vision-section h2 {
   padding-top: 0;

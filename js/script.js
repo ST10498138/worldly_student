@@ -233,7 +233,27 @@ document.addEventListener("DOMContentLoaded", () => {
         <h3>Tip 3: Prioritize Mobility (if the goal is to stay)</h3>
         <p>If your goal is to settle here, choose a program that offers mandatory internships or apprenticeships/work-study opportunities. Local work experience is the best way to guarantee a job after graduation.</p>
       `
-    }
+    },
+    {
+      id: "g9",
+      title: "Let's talk about health and well-being",
+      excerpt: "the importance of sport",
+      image: "_images/guide-sport.jpg",
+      likes: 89,
+      content: `
+        <h2>Tips for choosing a path, validating your options, and preparing your future</h2>
+        
+        <h3>Tip 1: Align Passion with Market Reality</h3>
+        <p>Don't choose based solely on passion or convenience. Research sectors that are hiring in the country. A local degree in a high-demand field (Tech, Healthcare, Engineering, certain Service sector jobs) will greatly facilitate obtaining a work permit after your studies.</p>
+        
+        <h3>Tip 2: Consider the Recognition System</h3>
+        <p>Check how your previous degrees are recognized here. You may need to complete bridging programs or specific preparatory years. Contact the equivalency service or the relevant organization to validate your initial level.</p>
+        
+        <h3>Tip 3: Prioritize Mobility (if the goal is to stay)</h3>
+        <p>If your goal is to settle here, choose a program that offers mandatory internships or apprenticeships/work-study opportunities. Local work experience is the best way to guarantee a job after graduation.</p>
+      `
+    },
+    
   ];
 
   const containerSelector = ".guides-grid";
@@ -328,12 +348,12 @@ document.addEventListener("DOMContentLoaded", () => {
         <div class="modal-footer">
           <small>Share this helpful guide with a friend</small>
           <div class="modal-footer-buttons">
-            <button class="btn secondary close-modal" type="button">Close</button>
-            <a class="btn primary" href="#tools-list">See tools</a>
+            <a class="btn primary" href="tools.html" target="_blank">See tools</a>
           </div>
         </div>
       </div>
     `;
+
     document.body.appendChild(overlay);
     
     const modalEl = overlay.querySelector(".modal");
@@ -491,32 +511,34 @@ document.addEventListener("DOMContentLoaded", () => {
   }
 
   function createModal(tool) {
-    const title = tool.querySelector("h3")?.textContent || "";
-    const desc = tool.querySelector("p")?.textContent || "";
-    const author = tool.querySelector("strong:last-of-type")?.textContent.replace("Author:", "").trim() || "";
-    const category = tool.querySelector("strong:first-of-type")?.textContent.replace("Category:", "").trim() || "";
-    const img = tool.querySelector("img")?.src || "";
+  const title = tool.querySelector("h3")?.textContent || "Untitled Tool";
+  const desc = tool.querySelector("p")?.textContent || "No description available.";
+  const img = tool.querySelector("img")?.src || "";
 
-    const overlay = document.createElement("div");
-    overlay.className = "modal-overlay tool-modal-overlay";
-    overlay.innerHTML = `
-      <div class="modal tool-modal">
-        <div class="modal-header">
-          <h3>${title}</h3>
-          <button class="close-modal" type="button" aria-label="Close">✕</button>
-        </div>
-        <div class="modal-body">
-          ${img ? `<img src="${img}" alt="${title}">` : ''}
-          <p><strong>Category:</strong> ${category}</p>
-          <p><strong>Author:</strong> ${author}</p>
-          <p>${desc}</p>
-        </div>
-        <div class="modal-footer">
-          <button class="btn primary download-btn" type="button">📥 Download</button>
-        </div>
+  
+  const category = tool.dataset.category || "BOOk";
+  const author = tool.dataset.author || "RUE";
+
+  const overlay = document.createElement("div");
+  overlay.className = "modal-overlay tool-modal-overlay";
+  overlay.innerHTML = `
+    <div class="modal tool-modal">
+      <div class="modal-header">
+        <h3>${title}</h3>
+        <button class="close-modal" type="button" aria-label="Close">✕</button>
       </div>
-    `;
-    
+      <div class="modal-body">
+        ${img ? `<img src="${img}" alt="${title}">` : ''}
+        <p><strong>Category:</strong> ${category}</p>
+        <p><strong>Author:</strong> ${author}</p>
+        <p>${desc}</p>
+      </div>
+      <div class="modal-footer">
+        <button class="btn primary download-btn" type="button">📥 Download</button>
+      </div>
+    </div>
+  `;
+
     document.body.appendChild(overlay);
     activeToolModal = overlay;
 
@@ -769,7 +791,7 @@ document.addEventListener("DOMContentLoaded", () => {
       likeCount += liked ? 1 : -1;
       likeDisplay.textContent = `❤️ ${likeCount} reactions`;
       likeBtn.style.color = liked ? "red" : "";
-      likeBtn.textContent = liked ? "💔 Unlike" : "❤️ Like";
+      likeBtn.textContent = liked ? "❤️ Unlike" : "❤️ Like";
     });
   }
 
@@ -968,20 +990,25 @@ document.addEventListener("DOMContentLoaded", () => {
 });
 
 
-// HOME PAGE
 document.addEventListener("DOMContentLoaded", () => {
 
-  /* Smooth appearance of Our Mission cards  */
+  /*  HOME PAGE  */
+
+  // Smooth appearance of Our Mission cards
   const missionSection = document.querySelector(".info-section h2");
   const cards = document.querySelector(".cards");
 
-  missionSection.addEventListener("click", () => {
-    cards.classList.toggle("visible");
-  });
+  if (missionSection && cards) {
+    missionSection.addEventListener("click", () => {
+      cards.classList.toggle("visible");
+      missionSection.classList.toggle("open");
+    });
+  }
 
-  /* Stats Section counter  */
+  // Stats Section counter
   const counters = document.querySelectorAll(".stat span");
-  let active = false; // to avoid excessive spam
+  const statsSection = document.querySelector(".stats");
+  let active = false;
 
   function animateCounters() {
     counters.forEach(counter => {
@@ -1003,96 +1030,99 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   }
 
-  const statsSection = document.querySelector(".stats");
+  if (statsSection) {
+    const observer = new IntersectionObserver(entries => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting && !active) {
+          animateCounters();
+          active = true;
+          setTimeout(() => active = false, 2000);
+        }
+      });
+    }, { threshold: 0.5 });
 
-  // restarts the animation each time the section is visible
-  const observer = new IntersectionObserver(entries => {
-    entries.forEach(entry => {
-      if (entry.isIntersecting && !active) {
-        animateCounters();
-        active = true;
-        setTimeout(() => active = false, 2000); 
-      }
-    });
-  }, { threshold: 0.5 });
+    observer.observe(statsSection);
+  }
 
-  observer.observe(statsSection);
-});
+  // Our Vision fade-in
+  const visionSection = document.querySelector(".vision-section");
+  if (visionSection) {
+    const visionObserver = new IntersectionObserver(entries => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          visionSection.classList.add("visible");
+        }
+      });
+    }, { threshold: 0.5 });
+    visionObserver.observe(visionSection);
+  }
 
+  /*  GALLERY  */
 
-// GALLERY
-
-document.addEventListener("DOMContentLoaded", () => {
-  // Select all images from the gallery
   const galleryImages = document.querySelectorAll(".gallery img");
+  if (galleryImages.length > 0) {
+    const modal = document.createElement("div");
+    modal.id = "imageModal";
+    modal.innerHTML = `
+      <span class="close-modal">&times;</span>
+      <img class="modal-content" id="modalImage">
+      <div id="caption"></div>
+    `;
+    document.body.appendChild(modal);
 
-  //Creates the modal structure dynamic
-  const modal = document.createElement("div");
-  modal.id = "imageModal";
-  modal.innerHTML = `
-    <span class="close-modal">&times;</span>
-    <img class="modal-content" id="modalImage">
-    <div id="caption"></div>
-  `;
-  document.body.appendChild(modal);
+    const modalImg = document.getElementById("modalImage");
+    const captionText = document.getElementById("caption");
+    const closeBtn = modal.querySelector(".close-modal");
 
-  const modalImg = document.getElementById("modalImage");
-  const captionText = document.getElementById("caption");
-  const closeBtn = document.querySelector(".close-modal");
-
-  // Opens the modal when an image is clicked
-  galleryImages.forEach(img => {
-    img.addEventListener("click", () => {
-      modal.style.display = "flex";
-      modalImg.src = img.src;
-      captionText.textContent = img.alt;
-      document.body.style.overflow = "hidden"; // prevents scrolling behind
+    galleryImages.forEach(img => {
+      img.addEventListener("click", () => {
+        modal.style.display = "flex";
+        modalImg.src = img.src;
+        captionText.textContent = img.alt;
+        document.body.style.overflow = "hidden";
+      });
     });
-  });
 
-  // Closes the modal when the button is clicked or outside the image
-  closeBtn.addEventListener("click", () => {
-    modal.style.display = "none";
-    document.body.style.overflow = "auto";
-  });
-
-  modal.addEventListener("click", (e) => {
-    if (e.target === modal) {
+    closeBtn.addEventListener("click", () => {
       modal.style.display = "none";
       document.body.style.overflow = "auto";
-    }
-  });
-});
+    });
 
-// ABOUT LOGIC
-
-document.addEventListener("DOMContentLoaded", () => {
-  const sections = document.querySelectorAll(".about-container, .about-section, .about-quote");
-
-  const observer = new IntersectionObserver(entries => {
-    entries.forEach(entry => {
-      if (entry.isIntersecting) {
-        entry.target.classList.add("about-visible");
+    modal.addEventListener("click", (e) => {
+      if (e.target === modal) {
+        modal.style.display = "none";
+        document.body.style.overflow = "auto";
       }
     });
-  }, { threshold: 0.2 });
+  }
 
-  sections.forEach(section => observer.observe(section));
-});
+  /* ABOUT PAGE  */
 
-// ANIMATION OF THE TITLE "ABOUT OUR STORY
-document.addEventListener("DOMContentLoaded", () => {
+  const aboutSections = document.querySelectorAll(".about-container, .about-section, .about-quote");
+  if (aboutSections.length > 0) {
+    const observer = new IntersectionObserver(entries => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add("about-visible");
+        }
+      });
+    }, { threshold: 0.2 });
+
+    aboutSections.forEach(section => observer.observe(section));
+  }
+
+  // Animation du titre “About Our Story”
   const title = document.querySelector(".about-text h1");
-  if (!title) return;
+  if (title) {
+    const words = title.textContent.split(" ");
+    title.textContent = "";
 
-  const words = title.textContent.split(" ");
-  title.textContent = "";
-
-  words.forEach((word, i) => {
-    const span = document.createElement("span");
-    span.textContent = word + " ";
-    span.classList.add("animate-title");
-    span.style.animationDelay = `${i * 0.15}s`; 
-    title.appendChild(span);
-  });
+    words.forEach((word, i) => {
+      const span = document.createElement("span");
+      span.textContent = word + " ";
+      span.classList.add("animate-title");
+      span.style.animationDelay = `${i * 0.15}s`;
+      title.appendChild(span);
+    });
+  }
 });
