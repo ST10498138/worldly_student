@@ -3,15 +3,19 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Worldly Student - Contact</title>
+  <title>Worldly Student - Contact| Get Help & Support</title>
   <link rel="stylesheet" href="styles.css">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"> <!-- Importing the Font Awesome icon library -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <meta name="description" content="Need help? Contact Worldly Student for support, questions, or partnerships. We're here to assist international students.">
+  <meta name="keywords" content="contact student support, international student help, student services">
+  <meta name="author" content="Worldly Student">
+  <meta name="revisit-after" content="7 days">
 </head>
 <body>
   <!-- HEADER -->
   <header>
     <div class="logo-contenaire">
-      <img src="_images/Logo_of_WorldlyStudent.png" alt="Logo"><!-- Logo -->
+      <img src="_images/Logo_of_WorldlyStudent.png" alt="worldly student logo"><!-- Logo -->
       <span>Worldly Student</span>
     </div>
     <!-- Navigation -->
@@ -36,11 +40,42 @@
       <!-- LEFT SECTION: Google Form + Google Maps -->
       <div class="contact-left">
         
-        <!-- Google Form  -->
-        <div class="google-form">
-          <iframe src="https://docs.google.com/forms/d/e/1FAIpQLScJyAQpeMZyu_shsIZkSMdI4qkLYvE1jS0xqcaSA9Ts7K5OzQ/viewform?embedded=true" 
-          width="640" height="720" frameborder="0" marginheight="0" marginwidth="0">Loading…</iframe>
+            <h3>Send us a message</h3>
+      <form id="contactForm">
+        <div class="form-group">
+          <label for="name">Full Name</label>
+          <input type="text" id="name" name="name" placeholder="Your name" required>
         </div>
+
+        <div class="form-group">
+          <label for="email">Email Address</label>
+          <input type="email" id="email" name="email" placeholder="you@example.com" required>
+        </div>
+
+        <div class="form-group">
+          <label for="phone">Phone Number</label>
+          <input type="tel" id="phone" name="phone" pattern="[0-9+\-\s]{8,15}" placeholder="+27 600 123 456">
+        </div>
+
+        <div class="form-group">
+          <label for="topic">Topic</label>
+          <select id="topic" name="topic" required>
+            <option value="">-- Choose an option --</option>
+            <option value="general">General Inquiry</option>
+            <option value="partnership">Partnership</option>
+            <option value="feedback">Feedback</option>
+            <option value="support">Technical Support</option>
+          </select>
+        </div>
+
+        <div class="form-group">
+          <label for="message">Your Message</label>
+          <textarea id="message" name="message" rows="5" placeholder="Type your message here..." required></textarea>
+        </div>
+
+        <button type="submit" class="btn primary">Send Message</button>
+        <p id="formResponse" class="form-response"></p>
+      </form>
 
         <!-- Integrated Google Maps -->
         <div class="map-container">

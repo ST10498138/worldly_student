@@ -4,6 +4,10 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Worldly Student - Resources & Guides</title>
+  <meta name="description" content="Access comprehensive guides for international students: arrival procedures, administrative documents, finding jobs, language learning, and cultural integration.">
+  <meta name="keywords" content="student arrival guide, administrative documents, student jobs, language learning, cultural integration">
+  <meta name="author" content="Worldly Student">
+  <meta name="revisit-after" content="7 days">
   <link rel="stylesheet" href="styles.css">
 </head>
 <body>
@@ -11,7 +15,7 @@
   <!-- Header -->
   <header>
     <div class="logo-contenaire"> <!-- contenaire pour rendre le logo rond -->
-      <img src="_images/Logo_of_WorldlyStudent.png" alt="Logo">
+      <img src="_images/Logo_of_WorldlyStudent.png" alt="worldly student logo">
       <span>Worldly Student</span>
     </div>
     <nav>
@@ -116,7 +120,7 @@
       </div>
 
       <div class="guide-card">
-        <img src="_Images/pexels-pixabay-267582.jpg" alt="Making the Right Choices">
+        <img src="_images/Gallery_classroom_session.jpg" alt="Making the Right Choices">
         <p class="pub-date">Publication date: 2025</p>
         <h3>Making the Right Choices</h3>
         <p>Tips for choosing your studies wisely.</p>
@@ -133,6 +137,66 @@
 
 
     </section>
+
+    <!-- enquiry form -->
+
+    <section id="guide-contribution-form">
+    <h2>Submit a Suggestion or Offer Your Help</h2>
+    <p>Use this form to tell us which guides you would like to see or to offer your expertise as a contributor.</p>
+
+    <form id="guide-form" action="mailto:your.email@example.com" method="post" enctype="text/plain">
+        
+        <fieldset>
+            <legend>Your contact details</legend>
+            <div class="form-group">
+                <label for="fullName">Full Name <span class="required">*</span></label>
+                <input type="text" id="fullName" name="fullName" required minlength="3">
+                <span class="error-message" id="fullName-error"></span>
+            </div>
+            
+            <div class="form-group">
+                <label for="email">E-mail address<span class="required">*</span></label>
+                <input type="email" id="email" name="email" required>
+                <span class="error-message" id="email-error"></span>
+            </div>
+
+            <div class="form-group">
+                <label for="phone">Phone number</label>
+                <input type="tel" id="phone" name="phone" pattern="[0-9]{9,15}" title="Entrez un numéro de téléphone valide (9 à 15 chiffres)">
+                <span class="error-message" id="phone-error"></span>
+            </div>
+        </fieldset>
+        
+        <fieldset>
+            <legend>Type of Request<span class="required">*</span></legend>
+            <div class="form-group">
+                <label for="topic">Select the type of request</label>
+                <select id="topic" name="topic" required>
+                    <option value="">-- Choose an option --</option>
+                    <option value="suggestion">Suggestion for a new guide</option>
+                    <option value="contribution">Offering my contribution to the writing</option>
+                    <option value="investigation">Are you satisfied with this service?</option>
+                    <option value="amelioration">How to improve existing guides</option>
+                    <option value="other">Other</option>
+                </select>
+                <span class="error-message" id="topic-error"></span>
+            </div>
+        </fieldset>
+
+        <fieldset>
+            <legend>Your Full Message <span class="required">*</span></legend>
+            <div class="form-group">
+                <label for="message">Message (minimum 20 characters)</label>
+                <textarea id="message" name="message" rows="6" required minlength="20"></textarea>
+                <span class="error-message" id="message-error"></span>
+            </div>
+        </fieldset>
+
+        <button type="submit" id="submit-guide-form" class="primary">Submit the Request</button>
+        
+        <p id="form-response" style="margin-top: 15px; display: none;"></p>
+    </form>
+</section>
   </main>
 
   <!-- Footer -->

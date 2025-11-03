@@ -66,7 +66,7 @@ Here is the sitemap of the Worldly Student website:
 
 ---
 
-##  Changelog Update
+##  Changelog Update - Part 2
 
 
 - Added a **CSS stylesheet** for consistent styling across all pages.  
@@ -109,8 +109,28 @@ Here is the sitemap of the Worldly Student website:
 ![contact us page](_images/contact_Screenshot.png)
 ![Contact us page](_images/contact_Screenshot2.png)
 
-
 ---
+
+
+## Changelog update – Part 3
+
+- Fixed **CSS rules** to follow proper syntax and use pseudo-classes (`:link`, `:visited`, `:hover`, `:active`, `:focus`).  
+- Updated **navigation menu** to adjust seamlessly across screen sizes: horizontal on desktop, vertical on mobile.  
+- Created a **central JavaScript file** to handle interactivity across all HTML pages.  
+- Added **CSS and JS animations** for smooth and engaging transitions.  
+- Replaced **Google Form** with a native HTML form in the Contact page.  
+- Managed **form actions and error handling** via JavaScript.  
+- Added an **enquiry form** with a built-in selector for choosing the subject.  
+- Made the **map interactive**, allowing users to engage directly with it.  
+- Updated **Gallery images** to open in a modal when clicked for a better view.  
+- Made **page sections dynamic**, e.g., "Our Mission" now requires a click to display.  
+- Added **interactivity for search bars and filters**.  
+- Added **modals for Tools and Guides pages**.  
+- Added **animations to simulate downloads** when a user clicks to download a tool.  
+- Renamed **images and updated alt attributes** for clarity and accessibility.  
+- Added **robots.txt and sitemap.xml** files
+---
+
 
 ##  References
 Canva, 2025. *ChatGPT*. [online] Available at: <https://www.canva.com/> [Accessed 27 August 2025].  

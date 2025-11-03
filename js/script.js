@@ -6,6 +6,70 @@
 
 //  GUIDES Page 
 
+document.addEventListener("DOMContentLoaded", () => {
+  const guideForm = document.getElementById("guide-form");
+  const formResponse = document.getElementById("form-response");
+
+  if (guideForm) {
+    guideForm.addEventListener("submit", (e) => {
+      e.preventDefault();
+
+      // Réinitialise les erreurs
+      document.querySelectorAll(".error-message").forEach(el => el.textContent = "");
+
+      let valid = true;
+
+      // Récupération des champs
+      const fullName = guideForm.fullName.value.trim();
+      const email = guideForm.email.value.trim();
+      const phone = guideForm.phone.value.trim();
+      const topic = guideForm.topic.value;
+      const message = guideForm.message.value.trim();
+
+      // Validation personnalisée
+      if (fullName.length < 3) {
+        document.getElementById("fullName-error").textContent = "Your name must be at least 3 characters long.";
+        valid = false;
+      }
+
+      const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+      if (!emailRegex.test(email)) {
+        document.getElementById("email-error").textContent = "Please enter a valid email address.";
+        valid = false;
+      }
+
+      if (phone && !/^[0-9+\-\s]{9,15}$/.test(phone)) {
+        document.getElementById("phone-error").textContent = "Phone number must contain 9–15 digits.";
+        valid = false;
+      }
+
+      if (!topic) {
+        document.getElementById("topic-error").textContent = "Please select a request type.";
+        valid = false;
+      }
+
+      if (message.length < 20) {
+        document.getElementById("message-error").textContent = "Your message must be at least 20 characters long.";
+        valid = false;
+      }
+
+      if (!valid) return;
+
+      // Simulation AJAX
+      formResponse.style.display = "block";
+      formResponse.style.color = "#555";
+      formResponse.textContent = "⏳ Sending your message...";
+
+      setTimeout(() => {
+        formResponse.textContent = "✅ Thank you! Your enquiry has been submitted successfully.";
+        formResponse.style.color = "green";
+        guideForm.reset();
+      }, 1500);
+    });
+  }
+});
+
+
 (() => {
   const GUIDES = [
     {
@@ -17,7 +81,7 @@
       content: `
         <h2>Welcome to the complete guide on arrival and adaptation</h2>
         
-        <h3>TIP 1: Local Number 📱</h3>
+        <h3>TIP 1: Local Number </h3>
         <p>Buy a local SIM card immediately. It's the gateway to a bank account, housing, and employment.</p>
         
         <h3>TIP 2: The Essential Lifeline (Residency Permit)</h3>
@@ -136,7 +200,7 @@
       id: "g7",
       title: "Cultural Integration",
       excerpt: "How to get familiar and connect with locals.",
-      image: "_Images/pexels-zen-chung-5538347.jpg",
+      image: "_images/Cultural_integration.jpg",
       likes: 6,
       content: `
         <h2>Making friends, understanding local customs, avoiding cultural misunderstandings</h2>
@@ -242,13 +306,15 @@
     overlay.innerHTML = `
       <div class="modal" role="dialog" aria-modal="true">
         <div class="modal-header">
-          <div>
-            <strong>${escapeHtml(g.title)}</strong>
-            <div style="font-size:0.85em;opacity:0.9">${escapeHtml(g.excerpt)}</div>
+          <div class="modal-title-section">
+            <strong style="font-size:1.2em;">${escapeHtml(g.title)}</strong>
+            <div style="font-size:0.85em;opacity:0.9;margin-top:5px;">${escapeHtml(g.excerpt)}</div>
           </div>
-          <div>
-            <button class="like-btn" data-id="${g.id}">❤️ <span class="count">${getStoredLikes(g.id,g.likes)}</span></button>
-            <button class="close-modal">✕</button>
+          <div class="modal-actions">
+            <button class="like-btn" data-id="${g.id}" type="button">
+              ❤️ <span class="count">${getStoredLikes(g.id,g.likes)}</span>
+            </button>
+            <button class="close-modal" type="button" aria-label="Close">✕</button>
           </div>
         </div>
         <div class="modal-body">
@@ -261,8 +327,8 @@
         </div>
         <div class="modal-footer">
           <small>Share this helpful guide with a friend</small>
-          <div>
-            <button class="btn secondary close-modal">Close</button>
+          <div class="modal-footer-buttons">
+            <button class="btn secondary close-modal" type="button">Close</button>
             <a class="btn primary" href="#tools-list">See tools</a>
           </div>
         </div>
@@ -383,7 +449,6 @@
 
   document.addEventListener("DOMContentLoaded", init);
 })();
-
 
 
 //  TOOLS Page 
@@ -827,23 +892,81 @@ document.addEventListener("DOMContentLoaded", () => {
 
 // CONTACT US LOGIC
 document.addEventListener("DOMContentLoaded", () => {
-  // Check that the map exists on this page
   const mapDiv = document.getElementById("map");
   if (!mapDiv) return;
 
-  // Creating the Leaflet map
-  const map = L.map("map").setView([-26.098, 27.884], 11);
+  // Création de la carte centrée sur Johannesburg
+  const map = L.map("map").setView([-26.2041, 28.0473], 12);
 
-  //Added map background
+  // Fond de carte
   L.tileLayer("https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png", {
-    maxZoom: 18,
     attribution: '© OpenStreetMap contributors'
   }).addTo(map);
 
-  // Location marker
-  const marker = L.marker([-26.098, 27.884]).addTo(map);
-  marker.bindPopup("<b>Worldly Student HQ</b><br>Johannesburg, South Africa").openPopup();
+  // Informations du bureau
+  const location = {
+    coords: [-26.2041, 28.0473],
+    popup: `
+      <div style="text-align:center">
+        <h3 style="margin-bottom:5px;">Worldly Student HQ</h3>
+        <p><i class="fas fa-map-marker-alt"></i> 123 International Street, Johannesburg</p>
+        <p><i class="fas fa-phone"></i> +27 890 436 234</p>
+        <p><i class="fas fa-envelope"></i> <a href="mailto:info@worldlystudent.com">info@worldlystudent.com</a></p>
+        <div style="margin-top:8px;">
+          <a href="#" style="color:#3b5998; margin-right:8px;"><i class="fab fa-facebook"></i></a>
+          <a href="#" style="color:#E1306C; margin-right:8px;"><i class="fab fa-instagram"></i></a>
+          <a href="#" style="color:#0077B5; margin-right:8px;"><i class="fab fa-linkedin"></i></a>
+          <a href="#" style="color:#FF0000;"><i class="fab fa-youtube"></i></a>
+        </div>
+      </div>
+    `
+  };
+
+  // Marqueur + popup
+  const marker = L.marker(location.coords).addTo(map).bindPopup(location.popup);
+
+  // Interaction : clic sur l’adresse dans le HTML
+  const addressElement = document.querySelector(".contact-right h3 + p");
+  if (addressElement) {
+    addressElement.style.cursor = "pointer";
+    addressElement.title = "Click to locate on the map";
+    addressElement.addEventListener("click", () => {
+      map.setView(location.coords, 15, { animate: true });
+      marker.openPopup();
+    });
+  }
 });
+
+document.addEventListener("DOMContentLoaded", () => {
+  const contactForm = document.getElementById("contactForm");
+  const formResponse = document.getElementById("formResponse");
+
+  contactForm.addEventListener("submit", async (e) => {
+    e.preventDefault();
+
+    // Validation simple
+    const name = contactForm.name.value.trim();
+    const email = contactForm.email.value.trim();
+    const message = contactForm.message.value.trim();
+
+    if (!name || !email || !message) {
+      formResponse.textContent = "Please fill out all required fields.";
+      formResponse.style.color = "red";
+      return;
+    }
+
+    // Simule une requête AJAX
+    formResponse.textContent = "Sending message...";
+    formResponse.style.color = "#555";
+
+    setTimeout(() => {
+      formResponse.textContent = "✅ Your message has been sent successfully!";
+      formResponse.style.color = "green";
+      contactForm.reset();
+    }, 1500);
+  });
+});
+
 
 // HOME PAGE
 document.addEventListener("DOMContentLoaded", () => {
@@ -894,4 +1017,82 @@ document.addEventListener("DOMContentLoaded", () => {
   }, { threshold: 0.5 });
 
   observer.observe(statsSection);
+});
+
+
+// GALLERY
+
+document.addEventListener("DOMContentLoaded", () => {
+  // Select all images from the gallery
+  const galleryImages = document.querySelectorAll(".gallery img");
+
+  //Creates the modal structure dynamic
+  const modal = document.createElement("div");
+  modal.id = "imageModal";
+  modal.innerHTML = `
+    <span class="close-modal">&times;</span>
+    <img class="modal-content" id="modalImage">
+    <div id="caption"></div>
+  `;
+  document.body.appendChild(modal);
+
+  const modalImg = document.getElementById("modalImage");
+  const captionText = document.getElementById("caption");
+  const closeBtn = document.querySelector(".close-modal");
+
+  // Opens the modal when an image is clicked
+  galleryImages.forEach(img => {
+    img.addEventListener("click", () => {
+      modal.style.display = "flex";
+      modalImg.src = img.src;
+      captionText.textContent = img.alt;
+      document.body.style.overflow = "hidden"; // prevents scrolling behind
+    });
+  });
+
+  // Closes the modal when the button is clicked or outside the image
+  closeBtn.addEventListener("click", () => {
+    modal.style.display = "none";
+    document.body.style.overflow = "auto";
+  });
+
+  modal.addEventListener("click", (e) => {
+    if (e.target === modal) {
+      modal.style.display = "none";
+      document.body.style.overflow = "auto";
+    }
+  });
+});
+
+// ABOUT LOGIC
+
+document.addEventListener("DOMContentLoaded", () => {
+  const sections = document.querySelectorAll(".about-container, .about-section, .about-quote");
+
+  const observer = new IntersectionObserver(entries => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add("about-visible");
+      }
+    });
+  }, { threshold: 0.2 });
+
+  sections.forEach(section => observer.observe(section));
+});
+
+// ANIMATION OF THE TITLE "ABOUT OUR STORY
+document.addEventListener("DOMContentLoaded", () => {
+  const title = document.querySelector(".about-text h1");
+  if (!title) return;
+
+  const words = title.textContent.split(" ");
+  title.textContent = "";
+
+  words.forEach((word, i) => {
+    const span = document.createElement("span");
+    span.textContent = word + " ";
+    span.classList.add("animate-title");
+    span.style.animationDelay = `${i * 0.15}s`; 
+    title.appendChild(span);
+  });
 });

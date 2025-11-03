@@ -1,0 +1,14 @@
+# robots.txt for Worldly Student
+
+User-agent: *
+# Allow all pages to be crawled
+Allow: /
+
+#Block private or technical directories
+Disallow: /js/
+Disallow: /_images/
+Disallow: /temp/
+Disallow: /drafts/
+
+# Sitemap location
+Sitemap: https://www.worldlystudent.com/sitemap.xml
